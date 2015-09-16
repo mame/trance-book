@@ -1,0 +1,78 @@
+require "doublehelix"
+
+ AT
+A--T
+T---A
+G----C
+ G----C
+  G----C
+   T---A
+    G--C
+     AT
+     GC
+    T--A
+   G---C
+  T----A
+ A----T
+T----A
+G---C
+C--G
+ AT
+ CG
+A--T
+A---T
+C----G
+ A----T
+  G----C
+   G---C
+    G--C
+     CG
+     GC
+    A--T
+   T---A
+  C----G
+ G----C
+A----T
+T---A
+C--G
+ GC
+ TA
+T--A
+C---G
+G----C
+ A----T
+  T----A
+   C---G
+    A--T
+     AT
+     AT
+    C--G
+   A---T
+  T----A
+ G----C
+T----A
+G---C
+T--A
+ TA
+ CG
+G--C
+C---G
+A----T
+ T----A
+  G----C
+   A---T
+    T--A
+     CG
+     GC
+    A--T
+   G---C
+  C----G
+ G----C
+G----C
+A---T
+C--G
+ AT
+ CG
+A--T
+C---G
+A----T

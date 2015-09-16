@@ -1,0 +1,14 @@
+$s   =% se   +   (% nd   )   ;   -> &b   {   b[ 1,   (   %   +% ev   )   +% al   ,   q   =' S=   [   ]; u,   v   =   $* ;h   =   [] ;s   =   [   ?# *3   ,   ]* 52   *   g   =" ";   ;   t= ""   +   (   '+ %w~
+s<   <1 0)   ;   q[ 11   0   ,   n= i=   0   ]= "'   +   %   w" <<   1   26 ;F   =   (   u) ?e   v   al (v   |   |   "2 20   5   0" ):   8   0   00 ;r   =   F/ 30   ;   %   !r oU   X   ,Y B7   >   *   8M 2i{
+|F   }K Gb   J   TQ ,Y   n   [   8d wB   6   K% #r   _   Z   /( (<   C   :x ;3   6   A   xV d6   :   4T -3   e   =   O# eW   C   j} ?u   4   ,   I^ &b   i   aD }I   0   q   a4 _T   e   (# CB   U   k   T9 2u%
+j1   F4 ;h   A   c] oA   T   `   d) N>   *   "3 }#   0   t   vd `?   B   CT f=   +   r   sC i<   m   Q, KC   <   q   sy %H   @   ?* y7   A   S   A] s(   S   j. ]n   >   L   *% {S   d   W# (`   =   F   %B U&?
+?Q   :l j[   _   @D f{   +   K   .9 $(   z   zN >K   r   ^   lM =>   G   v: 7;   _   P   7& %T   =   T5 8:   {   o   (X xl   I   5b 3-   +   H   6( yw   ,   U8 jA   '   }   &# 3A   P   n{ 6f   A   s   Cx fzM
+#3   Bi ED   c   {W 8z   5   g   yd o_   V   Jm "4   '   |   .% &R   a   Cw u)   z   >   )E T{   a   Ym n9   Z   _   Jf ZO   p   Bm kr   g   8   Pr )4   6   .w )f   J   `   x& TN   ^   k2 VQ   B   _   b^ 7OW
+uz   :W Z2   n   Y> e%   N   H   }N 6}   4   ]9 $|   9   2   Zg BM   D   *5 xl   1   2   L_ HH   n   -4 dF   Q   )   Xp V#   ^   vA ja   B   H   >Q bT   P   /` EB   S   U   VA |y   (   3/ pf   }   ;   =, ,P<
+M1   QX -x   3   <J l=   X   '   uQ |_   .   P{ Lp   l   /   r- NC   m   .3 }}   J   G   ^G p"   z   EU Rc   c   .   jR p"   q   j* vA   x   B   :u WB   .   #h Ds   X   J   pf U<   ]   UY h{   W   P   5J $69
+gW   i} :R   b   :j Q(   X   >   }% cL   o   $b jx   h   &   g0 8i   L   Y* F?   Y   u   `4 1X   #   ?g Ry   Y   p   SZ IF   Q   =p Y4   8   d   ru '}   .   _B GZ   2   c   `5 jx   F   Y/ m2   6   5   6A (Z|
+Y=e ;uR 9^i eb< rzI ;^7 5Y7 47R c+Q |dL BZR q=# >;? BU{ i!. byt es{ |m| n=n *91 +(m -1) %92 };Q =-> z{w =n% z;n /=z ;w+ 1}; 607 .ti mes {w= Q[3 ];w >2? (o= -Q[ 14] ;Q[ 5]. tim es{ S<< S[o ]}) :S< <(w <2? [Q[
+8]+ ".1 245 67a b"[ Q[8 ]]. hex /12 .0+ 4,r <<Q [4] ]:Q [8] *r) };u &&u [/w av$ /]? E=o pen (u, "wb ")< <[" RIF F", 36+ n=r *97 6," WAV Efm t"+ g,1 6,6 553 7,F ,F, 1,8 ,"d ata ",n ].p ack ("A 4VA 8V4 vvA 4V"
+):( E=o pen "/d ev/ dsp "," wb" ;u& &E. ioc tl( eva l(u ),[ F]. pac k(" l!" ))) ;O= ->f {Ma th. sin (f) };S .ea ch{ |o, e|( e)? h<< [Ma th: :PI *2* *o/ F,e ,e] :(b =[1 28] *o; h.s ele ct! {|m |x, y,z =m; b.m
+ap! {|b |z> 0?b +(O [O[ f=x *z- =1] +f] +O[ O[O [5* f]/ 4+3 *f] +f] )*z /y* 2:b };0 <m[ 2]= z}; E<< b.p ack ("C *") )}; E.c los e;3 6.t ime s{| x|s [(x +2) *7/ 5*4 -6, 3]= g*3 };$ ><< (s* 9+t *5) .gs ub( (;"
+La. Cam pan ell a.. Cop yri ght (c) _20 15_ Yus uke End oh" ;?# )){ ".$ s=% se+ (%n d); ->& b{b [1, (%+ %ev )+% al, q=' #{q .tr (g, "") <<1 26} *'' ]}[ &%I (\# $s) [0] ];" [i+ =1] }~* ''] }[& %I( #$s )[0 ]];

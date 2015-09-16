@@ -1,0 +1,17 @@
+eval(%w(z=32.chr;pu
+ts(["cp#{z+$*[0]+z}
+t.rb","clear"]+(0..
+265).flat_map{|i|$t
+||=[*$<];"tput_home
+/ruby_t.rb_#{;$t[i%
+14+2][39-i/14*2]}_|
+_tee_t2.rb/mv_t2.rb
+_t.rb/sleep_0.1".tr
+        ("_
+        ",z
+        ).s
+        pli
+        t(?
+        /)}
+        ))*
+        "")
