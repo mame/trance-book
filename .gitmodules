@@ -1,0 +1,26 @@
+[submodule "vendor/jor1k"]
+	path = vendor/jor1k
+	url = https://github.com/s-macke/jor1k.git
+	ignore = dirty
+[submodule "vendor/openrisc-linux"]
+	path = vendor/openrisc-linux
+	url = https://github.com/openrisc/linux.git
+[submodule "vendor/musl-cross"]
+	path = vendor/musl-cross
+	url = https://github.com/GregorR/musl-cross.git
+	ignore = dirty
+[submodule "vendor/ruby"]
+	path = vendor/ruby
+	url = https://github.com/ruby/ruby.git
+	ignore = dirty
+[submodule "vendor/zlib"]
+	path = vendor/zlib
+	url = https://github.com/madler/zlib.git
+	ignore = dirty
+[submodule "vendor/bootstrap-sass"]
+	path = vendor/bootstrap-sass
+	url = https://github.com/twbs/bootstrap-sass.git
+[submodule "gen"]
+	path = gen
+	url = git@github.com:mame/trance-book.git
+	branch = gh-pages

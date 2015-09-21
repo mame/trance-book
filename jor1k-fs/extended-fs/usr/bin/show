@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+    echo "Usage: show [png|gif|wav] ..." 1>&2
+    exit 1
+fi
+
+for i in $@
+do
+    # force to load the file (hack for jor1k's lazy file system)
+    head -c 1 "$i" > /dev/null
+
+    path=`readlink -f "$i"`
+    echo -n $path > /dev/browser
+    echo -ne "\0" > /dev/browser
+done

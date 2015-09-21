@@ -1,0 +1,15 @@
+diff --git a/build.sh b/build.sh
+index 68b8fac..5acf777 100755
+--- a/build.sh
++++ b/build.sh
+@@ -90,8 +90,8 @@ export CFLAGS="$SAVE_CFLAGS"
+ export CXXFLAGS="$SAVE_CXXFLAGS"
+ 
+ # linux headers
+-fetchextract $LINUX_HEADERS_URL
+-LINUX_HEADERS_DIR=$(stripfileext $(basename $LINUX_HEADERS_URL))
++LINUX_HEADERS_DIR=openrisc-linux
++cp -r $VENDOR/openrisc-linux $LINUX_HEADERS_DIR
+ 
+ if [ ! -e $LINUX_HEADERS_DIR/configured ]
+ then

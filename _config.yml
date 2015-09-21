@@ -1,0 +1,35 @@
+title: 『あなたの知らない超絶技巧プログラミングの世界』サポートサイト
+email: mame@ruby-lang.org
+source: src
+destination: gen
+keep_files: ["demo"]
+description: >
+    書籍『あなたの知らない超絶技巧プログラミングの世界』の
+    公式サポートサイトです。
+    オンラインデモ、演習問題の解答例、正誤表、ソースコードなど。
+baseurl: "/trance-book"
+twitter_username: mametter
+github_username: mame
+markdown: kramdown
+sass:
+    load_paths:
+        - src/css
+        - vendor/bootstrap-sass/assets/stylesheets
+    style: compressed
+page_list:
+    - url: /intro.html
+      title: 書籍紹介
+    - url: /answers.html
+      title: 演習の解答
+    - url: /errata.html
+      title: 正誤表
+    - url: /demo.html
+      title: オンラインデモ
+    - url: https://github.com/mame/trance-book/
+      title: 全ソースコード <i class="fa fa-github-square"></i>
+      rawurl: true
+    - url: /about.html
+      title: 著者について
+kramdown:
+  parse_block_html: true
+host: 0.0.0.0

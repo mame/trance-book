@@ -1,0 +1,2 @@
+#include <stdio.h>
+char s[]="#include <stdio.h>Nchar s[]=@;int main(){char*p;for(p=s;*p;p++){if(*p!=64){if(*p!=78){if(*p!=81){putchar(*p);}else{putchar(34);}}else{putchar(10);}}else{putchar(34);printf(Q%sQ,s);putchar(34);}}return 0;}N";int main(){char*p;for(p=s;*p;p++){if(*p!=64){if(*p!=78){if(*p!=81){putchar(*p);}else{putchar(34);}}else{putchar(10);}}else{putchar(34);printf("%s",s);putchar(34);}}return 0;}

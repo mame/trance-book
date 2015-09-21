@@ -1,0 +1,38 @@
+diff --git a/utils/fs2xml.c b/utils/fs2xml.c
+index 5906a37..783ef2a 100644
+--- a/utils/fs2xml.c
++++ b/utils/fs2xml.c
+@@ -83,6 +83,7 @@ char* GetFullPathNotHidden(const char* root, int id, int *hidden)
+ 			sprintf(path, "/%s%s", &(inodes[id].name[1]), temp);
+ 			*hidden = 1;
+ 		} else
++#if 0
+ 		if ((inodes[id].name[0] == '_') && (inodes[id].name[1] == '_')) {
+ 			sprintf(path, "/%s%s", &(inodes[id].name[2]), temp);
+ 			*hidden = 1;
+@@ -91,6 +92,7 @@ char* GetFullPathNotHidden(const char* root, int id, int *hidden)
+ 			sprintf(path, "/%s%s", &(inodes[id].name[1]), temp);
+ 			*hidden = 1;
+ 		} else
++#endif
+ 			sprintf(path, "/%s%s", inodes[id].name, temp);
+ 		id = inodes[id].parentid;
+ 	}
+@@ -120,7 +122,7 @@ int decompress(const char *filename, unsigned char *buf)
+ }
+ 
+ 
+-int Split(char *name, char walk[12][128])
++int Split(char *name, char walk[30][128])
+ {
+ 	int n = strlen(name);
+ 	int p = 0;
+@@ -168,7 +170,7 @@ int SearchInode(char *name, int parentid)
+ 
+ void MergeFile(struct posix_header* ph)
+ {
+-	char walk[12][128];
++	char walk[30][128];
+ 	int n = Split(ph->name, walk);
+ 	//printf("%i\n", n);
+ 	int parentid = -1;

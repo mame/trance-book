@@ -1,0 +1,2 @@
+export TERM=linux
+echo -ne '\e[H\e[J'

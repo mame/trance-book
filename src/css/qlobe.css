@@ -1,0 +1,213 @@
+﻿/* glue: 0.9.4 hash: ab48084d96 */
+        .sprite-qlobe-24,
+.sprite-qlobe-23,
+.sprite-qlobe-22,
+.sprite-qlobe-21,
+.sprite-qlobe-20,
+.sprite-qlobe-19,
+.sprite-qlobe-18,
+.sprite-qlobe-17,
+.sprite-qlobe-16,
+.sprite-qlobe-15,
+.sprite-qlobe-14,
+.sprite-qlobe-13,
+.sprite-qlobe-12,
+.sprite-qlobe-11,
+.sprite-qlobe-10,
+.sprite-qlobe-09,
+.sprite-qlobe-08,
+.sprite-qlobe-07,
+.sprite-qlobe-06,
+.sprite-qlobe-05,
+.sprite-qlobe-04,
+.sprite-qlobe-03,
+.sprite-qlobe-02,
+.sprite-qlobe-01,
+.sprite-qlobe-00 {
+            background-image: url('qlobe.png');
+            background-repeat: no-repeat;
+        }
+        
+        .sprite-qlobe-24 {
+            background-position: 0 0;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-23 {
+            background-position: -406px 0;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-22 {
+            background-position: 0 -348px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-21 {
+            background-position: -406px -348px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-20 {
+            background-position: -812px 0;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-19 {
+            background-position: -812px -348px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-18 {
+            background-position: 0 -696px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-17 {
+            background-position: -406px -696px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-16 {
+            background-position: -812px -696px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-15 {
+            background-position: -1218px 0;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-14 {
+            background-position: -1218px -348px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-13 {
+            background-position: -1218px -696px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-12 {
+            background-position: 0 -1044px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-11 {
+            background-position: -406px -1044px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-10 {
+            background-position: -812px -1044px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-09 {
+            background-position: -1218px -1044px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-08 {
+            background-position: -1624px 0;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-07 {
+            background-position: -1624px -348px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-06 {
+            background-position: -1624px -696px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-05 {
+            background-position: -1624px -1044px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-04 {
+            background-position: 0 -1392px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-03 {
+            background-position: -406px -1392px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-02 {
+            background-position: -812px -1392px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-01 {
+            background-position: -1218px -1392px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        .sprite-qlobe-00 {
+            background-position: -1624px -1392px;
+            width: 406px;
+            height: 348px;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+            .sprite-qlobe-24,
+    .sprite-qlobe-23,
+    .sprite-qlobe-22,
+    .sprite-qlobe-21,
+    .sprite-qlobe-20,
+    .sprite-qlobe-19,
+    .sprite-qlobe-18,
+    .sprite-qlobe-17,
+    .sprite-qlobe-16,
+    .sprite-qlobe-15,
+    .sprite-qlobe-14,
+    .sprite-qlobe-13,
+    .sprite-qlobe-12,
+    .sprite-qlobe-11,
+    .sprite-qlobe-10,
+    .sprite-qlobe-09,
+    .sprite-qlobe-08,
+    .sprite-qlobe-07,
+    .sprite-qlobe-06,
+    .sprite-qlobe-05,
+    .sprite-qlobe-04,
+    .sprite-qlobe-03,
+    .sprite-qlobe-02,
+    .sprite-qlobe-01,
+    .sprite-qlobe-00 {
+                background-image: url('qlobe.png');
+                -webkit-background-size: 2030px 1740px;
+                -moz-background-size: 2030px 1740px;
+                background-size: 2030px 1740px;
+            }
+        }
+        

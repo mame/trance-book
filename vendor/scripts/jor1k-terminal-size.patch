@@ -1,0 +1,20 @@
+diff --git a/js/plugins/terminal-linux.js b/js/plugins/terminal-linux.js
+index 06ddbd7..fed2215 100644
+--- a/js/plugins/terminal-linux.js
++++ b/js/plugins/terminal-linux.js
+@@ -1,11 +1,13 @@
+ var Terminal = require("../master/dev/terminal");
+ 
+-function LinuxTerm(termElementId) {
++function LinuxTerm(termElementId, nrows, ncolumns) {
+     this.termElementId = termElementId;
++    this.nrows = nrows || 24;
++    this.ncolumns = ncolumns || 80;
+ }
+ 
+ LinuxTerm.prototype.Init = function(jor1kGUI, tty) {
+-    this.term = new Terminal(24, 80, this.termElementId);
++    this.term = new Terminal(this.nrows, this.ncolumns, this.termElementId);
+     jor1kGUI.message.Register(tty, function(d) {
+        d.forEach(function(c) {
+            this.term.PutChar(c&0xFF);

@@ -1,0 +1,203 @@
+---
+---
+@import "_variables";
+$headings-small-color: $gray-darker;
+$navbar-height: 50px;
+$font-size-base: 16px;
+$font-size-h1: floor(($font-size-base * 2.2));
+$font-size-h2: floor(($font-size-base * 1.7));
+$font-size-h3: floor(($font-size-base * 1.25));
+$jumbotron-font-size: floor(($font-size-base * 1.2));
+$jumbotron-heading-font-size: floor(($font-size-base * 2.2));
+@import "bootstrap";
+
+html {
+    position: relative;
+    min-height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    padding-top: $navbar-height;
+    padding-bottom: $navbar-height;
+    overflow-x: hidden;
+    margin: 0px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $navbar-height;
+    background-color: $navbar-inverse-bg;
+    margin: 0px;
+}
+
+.container {
+    width: auto;
+    max-width: 1000px;
+    padding: 0 15px;
+}
+.container .text-muted {
+    text-align: center;
+    vertical-align: middle;
+    line-height: $navbar-height;
+    margin: 0px;
+}
+
+h2 {
+    border-bottom: 1px dashed #000000;
+    position: relative;
+}
+h2:after {
+    border-bottom: 1px dashed #000000;
+    content: "";
+    left: 0;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+}
+
+canvas#tty {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+}
+@media(max-width: 740px) {
+    canvas#tty {
+	width: 100%;
+	height: auto;
+    }
+}
+
+.ui-dialog {
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+    font-size: 80%;
+}
+#show-modal audio {
+    width: 300px;
+}
+#show-modal pre {
+    word-wrap: normal;
+    overflow-x: scroll;
+}
+p.attribute {
+    text-align: right;
+}
+
+#demo-main {
+    position: relative;
+}
+#buttons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+#buttons button {
+    opacity: 0.9;
+}
+#buttons button:hover {
+    opacity: 1;
+}
+
+body.fullscreen {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    overflow: hidden;
+
+    .container {
+	max-width: 100%;
+	padding: 0;
+    }
+
+    nav {
+	display: none;
+    }
+    div.page-header {
+	display: none;
+    }
+    footer {
+	display: none;
+    }
+}
+
+div#keyboard {
+    display: none;
+    position: absolute;
+    opacity: 0.9;
+}
+
+table.keyboard {
+    width: 640px !important;
+}
+@media(max-width: 640px) {
+    table.keyboard {
+	width: 100% !important;
+    }
+}
+
+table.keyboard td {
+    font-family: "courier", "fixed", "swiss", "monospace", "sans-serif";
+    text-align: center;
+    padding: 0;
+}
+table.keyboard {
+    table-layout: fixed;
+}
+
+table.keyboard col {
+    width: 1%;
+    background: white;
+}
+table.keyboard td:hover {
+    background: orange;
+}
+table.keyboard td.locked {
+    background: orange;
+}
+table.keyboard tr {
+    display: table-row;
+}
+table.keyboard tr.shift {
+    display: none;
+}
+table.keyboard-shift tr {
+    display: none;
+}
+table.keyboard-shift tr.shift {
+    display: table-row;
+}
+
+div.panel-body {
+    padding: 0px;
+    overflow: auto;
+}
+
+div.sprite p {
+    margin: 0;
+}
+div.sprite img {
+    width: 100%;
+    height: auto;
+}
+div.sprite img.main {
+    display: block;
+}
+div.sprite img.anime {
+    display: none;
+}
+div.sprite:hover img.main {
+    display: none;
+}
+div.sprite:hover img.anime {
+    display: block;
+}
+img.figure {
+    max-width: 50%;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+div.page a {
+    font-weight: bold;
+}

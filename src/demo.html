@@ -1,0 +1,84 @@
+---
+layout: default
+title: "オンラインデモ"
+javascripts: ["demo/jor1k-master-min.js", "demo.js"]
+---
+
+使い方は<button id="do-help-2" class="btn btn-default" type="submit" title="使い方"><i class="fa fa-question-circle"></i></button>をクリックしてください。
+
+<div id="demo-main">
+    <div id="buttons">
+	<button id="do-help" class="btn btn-default" type="submit" title="使い方">
+	    <i class="fa fa-question-circle"></i>
+	</button>
+	<br />
+	<button id="do-fullscreen" class="btn btn-default" type="submit" title="全画面モード">
+	    <i class="fa fa-arrows-alt"></i>
+	</button>
+	<br />
+	<button id="do-keyboard" class="btn btn-default" type="submit" title="バーチャルキーボード（Android用）">
+	    <i class="fa fa-keyboard-o"></i>
+	</button>
+    </div>
+    <canvas id="tty" class="screen" width="640" height="400"></canvas>
+    <div id="keyboard"></div>
+    <!--canvas id="keyboard" class="screen" width="466" height="162"></canvas-->
+</div>
+<div id="show-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="show-modal-content" class="modal-dialog modal-sm">
+	<div class="modal-content">
+	    <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+		<h4 class="modal-title" id="show-title">...</h4>
+	    </div>
+	    <div class="modal-body" id="show-body">
+		...
+	    </div>
+	    <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	    </div>
+	</div>
+    </div>
+</div>
+<div id="help-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div id="help-modal-content" class="modal-dialog modal-lg">
+	<div class="modal-content">
+	    <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+		<h4 class="modal-title" id="help-title">使い方</h4>
+	    </div>
+	    <div class="modal-body" id="help-body">
+		<ol>
+		    <li>
+			ブラウザ上で Linux が起動するのを待ちます。
+			<code>~ $</code> というプロンプトが出たら起動完了です。（ご利用のコンピュータの性能によりますが 10 秒程度）
+		    </li>
+
+		    <li>
+			次のように打ち込んでください（最後にリターン）。ファイルの中身を確認できます。
+			<pre><code>cat qlobe.rb</code></pre>
+		    </li>
+
+		    <li>
+			次のように打ち込んでください。qlobe.rb ファイルを Ruby プログラムとして実行します。
+			45 度回った地球のプログラムが表示されたら成功です。（5 秒程度）
+			<pre><code>ruby qlobe.rb</code></pre>
+		    </li>
+
+		    <li>
+			より詳しくは、README ファイルをご覧ください。
+			<pre><code>show README</code></pre>
+		    </li>
+		</ol>
+		<p class="attribute">このデモは <a href="http://jor1k.com">jor1k</a> を利用して作られています。</p>
+	    </div>
+	    <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	    </div>
+	</div>
+    </div>
+</div>
