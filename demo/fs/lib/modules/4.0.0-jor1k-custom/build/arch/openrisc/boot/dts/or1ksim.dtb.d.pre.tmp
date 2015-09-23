@@ -1,0 +1,1 @@
+or1ksim.o: arch/openrisc/boot/dts/or1ksim.dts

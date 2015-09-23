@@ -1,0 +1,25 @@
+         eval(s=s=
+         %w@proc{|
+         n|z=32.ch
+         r;k="[#{n
+         +=1}]";u=
+":>==;<==?"[m=n**4
+%-15,m+13]||"#{$f=
+k}";d="Y.E.#{c=64.
+chr}*'')";$f||d<<z
++k;t="eval(s=s=%w#
+         {c+s=s[0,
+         334]}#$f#
+         ";25.time
+         s{|y|m=u.
+         bytes.map
+         {|v|t<<s;
+         (0..[62-v
+         ,2].min).
+         map{|x|"i
+         f0zgl11p0
+zghuhku744d8hzeg41qtfx7xs7t
+wflr".to_i(36)[x+32+v*3-y/5
+*44]<1?z*9:t.slice!(0,9)}<<
+z}.join.rstrip;y>23&&m[-9,9
+]=d;puts(m)}}[1]#pY.E.@*'')

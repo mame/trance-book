@@ -1,0 +1,3 @@
+::sysinit:/etc/init.d/rcS
+::respawn:-login -f guest
+::restart:/sbin/init

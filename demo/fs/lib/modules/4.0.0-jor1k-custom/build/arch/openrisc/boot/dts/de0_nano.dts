@@ -1,0 +1,158 @@
+/dts-v1/;
+/ {
+	compatible = "opencores,de0_nano";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	interrupt-parent = <&pic>;
+
+	chosen {
+		bootargs = "console=uart,mmio,0x90000000,115200";
+	};
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x00000000 0x02000000>;
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		cpu@0 {
+			compatible = "opencores,or1200-rtlsvn481";
+			reg = <0>;
+			clock-frequency = <50000000>;
+		};
+	};
+
+	/*
+	 * OR1K PIC is built into CPU and accessed via special purpose
+	 * registers.  It is not addressable and, hence, has no 'reg'
+	 * property.
+	 */
+	pic: pic {
+		compatible = "opencores,or1k-pic";
+		#interrupt-cells = <1>;
+		interrupt-controller;
+	};
+
+	serial0: serial@90000000 {
+		compatible = "opencores,uart16550-rtlsvn105", "ns16550a";
+		reg = <0x90000000 0x100>;
+		interrupts = <2>;
+		clock-frequency = <50000000>;
+	};
+
+	i2c0: ocores@a0000000 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "opencores,i2c-ocores";
+		reg = <0xa0000000 0x8>;
+		interrupts = <10>;
+		clock-frequency = <50000000>;
+
+		reg-shift = <0>;	/* 8 bit registers */
+		reg-io-width = <1>;	/* 8 bit read/write */
+
+		adxl34x@1d {
+			compatible = "adxl34x";
+			reg = <0x1d>;
+			interrupts = <26>;
+		};
+		eeprom@50 {
+			compatible = "at24,24c02";
+			reg = <0x50>;
+			pagesize = <8>;
+		};
+	};
+
+	spi0: spi0@b0000000 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "opencores,spi-simple";
+		reg = <0xb0000000 0x5>;
+
+		flash0: mtd@0 {
+			#address-cells = <1>;
+			#size-cells = <1>;
+			compatible = "spansion,s25sl064p";
+			reg = <0>;
+			spi-max-frequency = <40000000>;
+			m25p,fast-read;
+
+			partition@0 {
+				label = "FPGA image";
+				reg = <0x00000000 0x000b0000>;
+				read-only;
+			};
+			partition@b0000 {
+				label = "bootloader";
+				reg = <0x000b0000 0x00050000>;
+				read-only;
+			};
+			partition@100000 {
+				label = "free space";
+				reg = <0x00100000 0x00700000>;
+			};
+		};
+	};
+
+	spi1: spi1@b1000000 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "opencores,spi-simple";
+		reg = <0xb1000000 0x5>;
+
+		adc@0 {
+			compatible = "adcxx,adcxx8s";
+			reg = <0>;
+			spi-max-frequency = <1000000>;
+		};
+	};
+
+	gpio0: gpio@91000000 {
+		compatible = "opencores,jbtrivial";
+		reg = <0x91000000 0x2>;
+		#gpio-cells = <2>;
+		gpio-controller;
+		xlnx,data-offset = <0>;
+		xlnx,tri-offset = <1>;
+		xlnx,gpio-width = <8>;
+	};
+
+	gpio-leds {
+		compatible = "gpio-leds";
+		heartbeat {
+			label = "Heartbeat";
+			gpios = <&gpio0 0 0x0>;
+			linux,default-trigger = "heartbeat";
+		};
+		led1 {
+			label = "led1";
+			gpios = <&gpio0 1 0>;
+		};
+		led2 {
+			label = "led2";
+			gpios = <&gpio0 2 0>;
+		};
+		led3 {
+			label = "led3";
+			gpios = <&gpio0 3 0>;
+		};
+		led4 {
+			label = "led4";
+			gpios = <&gpio0 4 0>;
+		};
+		led5 {
+			label = "led5";
+			gpios = <&gpio0 5 0>;
+		};
+		led6 {
+			label = "led6";
+			gpios = <&gpio0 6 0>;
+		};
+		led7 {
+			label = "led7";
+			gpios = <&gpio0 7 0>;
+		};
+	};
+};

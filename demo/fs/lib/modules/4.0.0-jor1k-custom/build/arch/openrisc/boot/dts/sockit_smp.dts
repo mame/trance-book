@@ -1,0 +1,136 @@
+/dts-v1/;
+/ {
+	compatible = "fusesoc,sockit";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	interrupt-parent = <&pic>;
+
+	chosen {
+/*		bootargs = "console=uart,mmio,0x90000000,115200 video=ocfb:640x480-16@60";*/
+/*		bootargs = "console=uart,mmio,0x90000000,115200 root=/dev/nfs nfsroot=192.168.255.100:/home/stefan/openrisc/debian/initramfs,nolock ip=dhcp rootwait rw nfsrootdebug debug video=ocfb:640x480-8@60";*/
+/*		bootargs = "console=uart,mmio,0x90000000,115200 root=/dev/nfs nfsroot=192.168.255.100:/home/stefan/openrisc/rootfs/musl-root,nolock ip=dhcp rootwait rw nfsrootdebug debug video=ocfb:640x480-8@60";*/
+		bootargs = "console=tty0 console=uart,mmio,0x90000000,115200 root=/dev/nfs nfsroot=192.168.255.100:/home/stefan/openrisc/rootfs/build/or1k-toolchain/sysroot,nolock ip=dhcp rootwait rw nfsrootdebug debug video=ocfb:640x480-8@60";
+	};
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x00000000 0x3fffc000>;
+/*		reg = <0x00000000 0x40000000>;*/
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		cpu@0 {
+			compatible = "openrisc,mor1kx-v3";
+			reg = <0>;
+			clock-frequency = <100000000>;
+		};
+		cpu@1 {
+			compatible = "openrisc,mor1kx-v3";
+			reg = <1>;
+			clock-frequency = <100000000>;
+		};
+		cpu@2 {
+			compatible = "openrisc,mor1kx-v3";
+			reg = <2>;
+			clock-frequency = <100000000>;
+		};
+		cpu@3 {
+			compatible = "openrisc,mor1kx-v3";
+			reg = <3>;
+			clock-frequency = <100000000>;
+		};
+	};
+
+	ompic: ompic {
+		compatible = "ompic";
+		reg = <0x98000000 0x100>;
+		#interrupt-cells = <1>;
+		interrupt-controller;
+		interrupts = <1>;
+	};
+
+	/*
+	 * OR1K PIC is built into CPU and accessed via special purpose
+	 * registers.  It is not addressable and, hence, has no 'reg'
+	 * property.
+	 */
+	pic: pic {
+		compatible = "opencores,or1k-pic-level";
+		#interrupt-cells = <1>;
+		interrupt-controller;
+	};
+
+	serial0: serial@90000000 {
+		compatible = "opencores,uart16550-rtlsvn105", "ns16550a";
+		reg = <0x90000000 0x20>;
+		interrupts = <2>;
+		clock-frequency = <100000000>;
+	};
+
+
+	i2c0: ocores@a0000000 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "opencores,i2c-ocores";
+		reg = <0xa0000000 0x8>;
+		interrupts = <10>;
+		clock-frequency = <100000000>;
+
+		reg-shift = <0>;	/* 8 bit registers */
+		reg-io-width = <1>;	/* 8 bit read/write */
+
+		ssm2603: ssm2603@1a {
+			#sound-dai-cells = <0>;
+			compatible = "adi,ssm2603";
+			reg = <0x1a>;
+		};
+	};
+
+	wb_dma0: wb_streamer@95000000 {
+		compatible = "wb-streamer-dma";
+		reg = <0x95000000 0x100>;
+		interrupts = <11>;
+		#dma-cells = <1>;
+		#dma-channels = <1>;
+	};
+
+	wb_i2s: wb_i2s@95000100 {
+		#sound-dai-cells = <0>;
+		compatible = "wb-i2s";
+		reg = <0x95000100 0x100>;
+		dmas = <&wb_dma0 0>;
+		dma-names = "tx";
+/*
+		dmas = <&wb_dma 0 &wb_dma 1>;
+		dma-names = "tx", "rx";
+*/
+	};
+
+	sound {
+		compatible = "simple-audio-card";
+		simple-audio-card,format = "i2s";
+
+		simple-audio-card,cpu {
+			sound-dai = <&wb_i2s>;
+		};
+
+		simple-audio-card,codec {
+			sound-dai = <&ssm2603>;
+			/*system-clock-frequency = <12288000>;*/
+			system-clock-frequency = <11289600>;
+		};
+	};
+
+	enet0: ethoc@92000000 {
+		compatible = "opencores,ethmac-rtlsvn338";
+		reg = <0x92000000 0x100>;
+		interrupts = <4>;
+	};
+
+	fb0: ocfb@97000000 {
+		compatible = "opencores,ocfb";
+		reg = <0x97000000 0x1000>;
+	};
+};

@@ -1,0 +1,146 @@
+/dts-v1/;
+/ {
+	compatible = "opencores,or1ksim";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	interrupt-parent = <&pic>;
+	#bootargs = "root=/dev/sda console=uart,mmio,0x90000000,115200 video=ocfb:mode_option=640x400-32";
+
+	chosen {
+		bootargs = "root=host rootfstype=9p rootflags=trans=virtio console=uart,mmio,0x90000000,115200 video=ocfb:mode_option=640x400-16";
+	};
+
+	memory@0 {
+		device_type = "memory";
+		reg = <0x00000000 0x01F00000>;
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		cpu@0 {
+			compatible = "opencores,or1200-rtlsvn481";
+			reg = <0>;
+			clock-frequency = <20000000>;
+		};
+	};
+
+        /* 
+         * If ompic is compiled in, it will used as default
+         */
+	ompic: ompic {
+		compatible = "ompic";
+		reg = <0x9A000000 0x100>;
+		#interrupt-cells = <1>;
+		interrupt-controller;
+		interrupts = <1>;
+	};
+
+	/*
+	 * OR1K PIC is built into CPU and accessed via special purpose
+	 * registers.  It is not addressable and, hence, has no 'reg'
+	 * property.
+	 */
+	pic: pic {
+		compatible = "opencores,or1k-pic";
+		#interrupt-cells = <1>;
+		interrupt-controller;
+	};
+
+	serial0: serial@90000000 {
+		compatible = "opencores,uart16550-rtlsvn105", "ns16550a";
+		reg = <0x90000000 0x100>;
+		interrupts = <2>;
+		clock-frequency = <20000000>;
+	};
+
+	serial1: serial@96000000 {
+		compatible = "opencores,uart16550-rtlsvn105", "ns16550a";
+		reg = <0x96000000 0x100>;
+		interrupts = <3>;
+		clock-frequency = <20000000>;
+	};
+
+	enet0: ethoc@92000000 {
+		compatible = "opencores,ethmac-rtlsvn338";
+		reg = <0x92000000 0x100>;
+		interrupts = <4>;
+	};
+
+        fb0: fb@91000000 {
+                compatible = "opencores,ocfb";
+                reg = <0x91000000 0x100>;
+                interrupts = <8>;
+        };
+
+/*
+        mtd0: flash@95000000 {
+                device_type="rom";
+                compatible = "direct-mapped";
+                reg = <0x95000000 0x02000000>;
+                bank-width = <1>;
+                read-only;
+        };
+*/
+	
+	ata@9e000000  {
+		compatible = "ata-generic";
+                reg = <0x9e000000 0x100
+		       0x9e000100 0xf00>;
+		pio-mode = <4>;
+		reg-shift = <2>;
+                interrupts = <15>;
+	};
+
+	tsc@93000000 {
+		compatible = "nxp,lpc3220-tsc";
+		reg = <0x93000000 0x1000>;
+		interrupts = <0x9 0>;
+	};
+
+	keyboard@94000000 {
+		compatible = "opencores,kbd";
+		reg = <0x94000000 0x100>;
+		interrupts = <5>;
+	};
+
+        virtio_block@97000000 {
+                compatible = "virtio,mmio";
+                reg = <0x97000000 0x1000>;
+                interrupts = <6>;
+        };
+
+        rtc@40024000 {
+                compatible = "nxp,lpc3220-rtc";
+                reg = <0x99000000 0x1000>;
+                interrupts = <0xA 0>;
+        };
+
+	sh_fsi2: sound@98000000 {
+		#sound-dai-cells = <1>;
+		compatible = "renesas,sh_fsi2";
+		reg = <0x98000000 0x400>;
+		interrupts = <7>;
+	};
+
+	ak4554: codec {
+		#sound-dai-cells = <0>;
+		compatible = "asahi-kasei,ak4554";
+	};
+
+        sound {
+                compatible = "simple-audio-card";
+                simple-audio-card,format = "left_j";
+                simple-audio-card,cpu {
+                        sound-dai = <&sh_fsi2 0>;
+                };
+                simple-audio-card,codec {
+                        sound-dai = <&ak4554>;
+                        bitclock-master;
+                        frame-master;
+                        /*system-clock-frequency = <11289600>;*/
+                };
+        };
+
+
+};

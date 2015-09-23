@@ -1,0 +1,31 @@
+$ ruby alpha-punct-uroboros-quine.gen.rb > alpha-uroboros-quine.rb
+
+$ wc -l alpha-uroboros-quine.rb
+14371 alpha-uroboros-quine.rb
+
+$ head alpha-uroboros-quine.rb
+public
+def each
+  clear
+  concat begin
+    dup ensure concat begin
+      clear
+      concat concat concat size
+      concat concat concat concat size
+      concat size
+      size
+
+$ ruby alpha-uroboros-quine.rb > punct-uroboros-quine.rb
+
+$ head -c 300 punct-uroboros-quine.rb
+__="_"=~/$/;_=__+__;->(&___){___["",""<<((_+__)*_*_*_+__)*_*_+__<<((((_+__)*_+__
+)*_*_+__)*_+__)*_<<(_+__)*_*_*_*_*_+__<<(((_+__)*_*_+__)*_+__)*_*_,""<<(_+__)*_*
+_*_*_*_+__<<(((_+__)*_*_+__)*_+__)*_*_<<((_+__)*_+__)*_*_*_*_<<((_+__)*_*_+__)*_
+*_*_<<(_+__)*_*_*_*_*_+__<<(((_+__)*_+__)*_+__)*_*_+__<<(_+_
+
+$ ruby punct-uroboros-quine.rb > alpha-uroboros-quine-2.rb
+
+$ diff -s alpha-uroboros-quine.rb alpha-uroboros-quine-2.rb
+ファイル alpha-uroboros-quine.rb と alpha-uroboros-quine-2.rb は同一です
+
+$ <-cursor
