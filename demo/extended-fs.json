@@ -1384,7 +1384,7 @@
 			{ "name":"ruby", "mode":"100755", "size":3050268, "c":1},
 			{ "name":"irb", "mode":"100755", "size":178},
 			{ "name":"erb", "mode":"100755", "size":4838},
-			{ "name":"show", "mode":"100755", "size":305}
+			{ "name":"show", "mode":"100775", "size":305}
 		]},
 		{ "name":"libexec", "mode":"40755", "child":[
 			{ "name":"gcc", "mode":"40755", "child":[
@@ -7423,7 +7423,6 @@
 				{ "name":"rquine.rb", "mode":"100664", "size":1071, "uid":1000, "gid":1000},
 				{ "name":"rquine-test.rb", "mode":"100664", "size":232, "uid":1000, "gid":1000}
 			]},
-			{ "name":"tw.wav", "mode":"100664", "size":19912, "uid":1000, "gid":1000, "c":1},
 			{ "name":"6-e", "mode":"40775", "uid":1000, "gid":1000, "child":[
 				{ "name":"alpha-punct-uroboros-quine.rb", "mode":"100664", "size":1271, "uid":1000, "gid":1000},
 				{ "name":"alpha-punct-uroboros-quine.txt", "mode":"100664", "size":958, "uid":1000, "gid":1000},
@@ -7457,7 +7456,6 @@
 				{ "name":"square-quine.rb", "mode":"100664", "size":528, "uid":1000, "gid":1000},
 				{ "name":"triangle-quine.rb", "mode":"100664", "size":135, "uid":1000, "gid":1000}
 			]},
-			{ "name":"tools", "mode":"40775", "uid":1000, "gid":1000, "child":[] },
 			{ "name":"1-8-1", "mode":"40775", "uid":1000, "gid":1000, "child":[
 				{ "name":"_fib_.rb", "mode":"100664", "size":548, "uid":1000, "gid":1000},
 				{ "name":"_hello_.rb", "mode":"100664", "size":245, "uid":1000, "gid":1000}
@@ -7492,7 +7490,6 @@
 				{ "name":"mq.rb", "mode":"100664", "size":212, "uid":1000, "gid":1000},
 				{ "name":"uroboros-quine.py.pl.rb", "mode":"100664", "size":81, "uid":1000, "gid":1000}
 			]},
-			{ "name":"qng.png", "mode":"100664", "size":9812, "uid":1000, "gid":1000},
 			{ "name":"7-2", "mode":"40775", "uid":1000, "gid":1000, "child":[
 				{ "name":"lipo-detect.rb", "mode":"100664", "size":2590, "uid":1000, "gid":1000},
 				{ "name":"lipo-hello.rb", "mode":"100664", "size":623, "uid":1000, "gid":1000},
@@ -7573,7 +7570,6 @@
 				{ "name":"rot13-quine2.rb", "mode":"100664", "size":203, "uid":1000, "gid":1000},
 				{ "name":"array-quine.rb", "mode":"100664", "size":359, "uid":1000, "gid":1000}
 			]},
-			{ "name":"qif.gif", "mode":"100664", "size":54272, "uid":1000, "gid":1000, "c":1},
 			{ "name":"1-6-1", "mode":"40775", "uid":1000, "gid":1000, "child":[
 				{ "name":"ch1.rb", "mode":"100664", "size":2094, "uid":1000, "gid":1000}
 			]},
