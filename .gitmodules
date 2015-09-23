@@ -20,7 +20,3 @@
 [submodule "vendor/bootstrap-sass"]
 	path = vendor/bootstrap-sass
 	url = https://github.com/twbs/bootstrap-sass.git
-[submodule "gen"]
-	path = gen
-	url = git@github.com:mame/trance-book.git
-	branch = gh-pages
