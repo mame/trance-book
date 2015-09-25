@@ -13,7 +13,7 @@ javascripts: []
 <div class="jumbotron">
 <img class="pull-right img-responsive figure" alt="書影" src="images/book-cover.png" />
 
-このウェブサイトは、技術評論社より発売予定の書籍『あなたの知らない超絶技巧プログラミングの世界』のサポートサイトです。
+このウェブサイトは、技術評論社から発売された書籍『あなたの知らない超絶技巧プログラミングの世界』のサポートサイトです。
 
 本の内容については[書籍紹介](intro.html)を見てください。
 
