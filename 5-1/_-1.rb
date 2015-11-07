@@ -1,4 +1,4 @@
-$src = ""
+$src = "".dup
 def method_missing(method_name)
   $src << method_name.size
 end

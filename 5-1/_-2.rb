@@ -12,7 +12,7 @@ def method_missing(method_name, *args)
 end
 at_exit do
   undef method_missing
-  src = ""
+  src = "".dup
   $lines.flatten.each_slice(3) {|digits| src << digits.join.to_i(N) }
   eval src
 end

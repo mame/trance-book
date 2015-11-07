@@ -6,8 +6,8 @@ ax3Db"PAks7DuzPn{dsd6D`RvBiyiiPyD"Q"Dy}7@7y}AR$RAy2EDh@B|6I+
 DhPA7}2fwP2@xwzuD@2eu`2i0Emy}?i`m}2D6E6}j3t3v6j6}oD6t6v2E7A6
 }&w3fv2t6D2jk{|B@Rr|`@"e`SwPT0R0T}Rrlv1ppvk{v2t2v3t3x|6t6o|#
 Ujv6A2D3|w2wP&vg6v{qBvEpqvE0B0Evg6Ds7hP7}`lPl`@rrB@Pl`lPvZ%y
-'*"";29.times{|i|h.gsub!""<<97+i,"|7EsnE2{uuww{{`B}BxA3{zBy\
-y|2DDGG00zz2|{E``}|PPAA}}BBEE}@@@"[i*2,2]};z="\2\0\x80".b*2;
+'*"";z="\2\0\x80".b*2;i=97;"|7EsnE2{uuww{{`B}BxA3{zByy|2DDGG
+00zz2|{E``}|PPAA}}BBEE}@@@".scan(/../){h.gsub!i.chr,$&;i+=1}
 $>.binmode<<"GIF89a"+[372,8388778,0,754974719,0,11141492,3].
 pack("vV5xC")+(y=z*076)*3+"eval$s=%q\x7e#$s\x7e".scan(/.+/).
 map{|l|(0..9).map{|i|[z,l.bytes.map{|c|[4,17&n=h[c*10-320+i]

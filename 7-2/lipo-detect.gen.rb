@@ -64,7 +64,7 @@ END
 #main = "puts 72.chr+'ello, world!';exit"
 
 
-code = <<'END'
+code = <<'END'.dup
 format= %%->{#({#){#.{#0{#1{#2{#3{#4{#5{#6{#7{#8{#9{#h{#k{#l{#p{#v{#w{#<{#*{#a{#b{#c{#d{#e{#f{#
 
   proc_tr = -> s,x,y { -> &_ { _[s,x,y]}[&:tr] }

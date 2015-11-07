@@ -16,11 +16,11 @@ def punct_encode_char(c)
 end
 
 def punct_encode_string(s)
-  ['""', *s.bytes.map {|c| punct_encode_char(c) }].join("<<")
+  ['(""+"")', *s.bytes.map {|c| punct_encode_char(c) }].join("<<")
 end
 
 def output_punct_encode_program(p)
-  code = %q(__="_"=~/$/;_=__+__;->(&___){___["",EVAL,CODE]}[&:"#{SEND}"])
+  code = %q(__="_"=~/$/;_=__+__;->(&___){___["",EVAL,CODE]}[&:"#{SEND}"]).dup
   code.gsub!("EVAL") { punct_encode_string("eval") }
   code.gsub!("CODE") { punct_encode_string(p) }
   code.gsub!("SEND") { punct_encode_string("send") }

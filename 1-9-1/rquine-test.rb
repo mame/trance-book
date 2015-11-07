@@ -6,6 +6,6 @@ src.size.times do |i|
 
   File.write("rquine.broken.rb", broken_src)
 
-  fail if `ruby rquine.broken.rb` != src
+  fail if `ruby --enable-frozen-string-literal rquine.broken.rb` != src
 end
 p :ok!

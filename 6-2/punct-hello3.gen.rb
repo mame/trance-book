@@ -15,12 +15,12 @@ end
 
 # 文字列を記号プログラム化する
 def encode_string(s)
-  ['""', *s.bytes.map {|c| encode_char(c) }].join("<<")
+  ['(""+"")', *s.bytes.map {|c| encode_char(c) }].join("<<")
 end
 
 # 変換前プログラム全体を変換する
 def encode_program(p)
-  code = %q(__="_"=~/$/;_=__+__;->(&___){___["",EVAL,CODE]}[&:"#{SEND}"])
+  code = %q(__="_"=~/$/;_=__+__;->(&___){___["",EVAL,CODE]}[&:"#{SEND}"]).dup
   code.gsub!("EVAL") { encode_string("eval") }
   code.gsub!("CODE") { encode_string(p) }
   code.gsub!("SEND") { encode_string("send") }
