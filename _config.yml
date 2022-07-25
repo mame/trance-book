@@ -13,8 +13,8 @@ github_username: mame
 markdown: kramdown
 sass:
     load_paths:
-        - src/css
-        - vendor/bootstrap-sass/assets/stylesheets
+        - ./css
+        - ../vendor/bootstrap-sass/assets/stylesheets
     style: compressed
 page_list:
     - url: /intro.html
