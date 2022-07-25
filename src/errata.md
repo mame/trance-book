@@ -15,6 +15,13 @@ title: "正誤・追加情報"
 
 （@golden\_lucky さん[ご指摘](http://note.golden-lucky.net/2015/09/blog-post_24.html)ありがとうございました）
 
+### p.139: 誤字（図 4-4 の 2 行目）
+
+* 誤：`  s=%(eval$s=$q(#{$s}));`
+* 正：`  s=%(eval$s=%q(#{$s}));` （`$q` は `%q` が正しい）
+
+([@koic さん](https://twitter.com/koic/status/1490035605916762112)と [@Ferroma13265516 さん](https://twitter.com/Ferroma13265516/status/1551588139998892032)ご報告ありがとうございました）
+
 ### p.240: 脱字（上から 2 行目）
 
 * 誤：デコードは逆方向に変換だけですが
