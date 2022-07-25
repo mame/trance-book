@@ -95,7 +95,7 @@
         <h1>演習の解答例</h1>
       </div>
       
-      <h2 id="section">目次</h2>
+      <h2 id="目次">目次</h2>
 
 <ul>
   <li><a href="#answer-2-1">演習 2-1 の解答</a></li>
@@ -118,19 +118,19 @@
 
 <p>素直にやってみた例。</p>
 
-<pre><code>eval((                    %w(1.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval((                    %w(1.
 up      to  (100)  do|n|  s=  n;  if (n  %15==  0);s=
 "FizzB        uz     z"   elsif   (n %5    ==     0)
 ;s      ="   Bu     zz    "e  ls  if (n   %3     ==  
 0)      ;s  ="Fiz  z"end  ;puts    (s)e  nd##)  *""))
-</code></pre>
+</code></pre></div></div>
 
 <p>粗いので読みにくいですが、“FizzBuzz”の形をしています。生成プログラムは <a href="https://github.com/mame/trance-book/blob/master/2-1/aa-fizzbuzz.gen.rb">aa-fizzbuzz.gen.rb</a> を参照してください。</p>
 
 <p>この解答例は、元の FizzBuzz プログラムに本当に単純に括弧とセミコロンを足しただけなので、
 改善の余地は数多くあります。
-<code>do</code> … <code>end</code> を <code>{</code>…<code>}</code> にしたり、
-<code>if</code> … <code>elsif</code> … <code>end</code> を条件演算子 … <code>?</code> … <code>:</code> … にしたりすることで、
+<code class="language-plaintext highlighter-rouge">do</code> … <code class="language-plaintext highlighter-rouge">end</code> を <code class="language-plaintext highlighter-rouge">{</code>…<code class="language-plaintext highlighter-rouge">}</code> にしたり、
+<code class="language-plaintext highlighter-rouge">if</code> … <code class="language-plaintext highlighter-rouge">elsif</code> … <code class="language-plaintext highlighter-rouge">end</code> を条件演算子 … <code class="language-plaintext highlighter-rouge">?</code> … <code class="language-plaintext highlighter-rouge">:</code> … にしたりすることで、
 かなり短くできるでしょう。
 そうして空いた文字数の分で機能拡張してみると面白いでしょう。
 たとえば、今は 1 から 100 まで FizzBuzz を表示しますが、
@@ -139,24 +139,24 @@ up      to  (100)  do|n|  s=  n;  if (n  %15==  0);s=
 <h2 id="answer-3-1">演習 3-1 の解答</h2>
 <p>実直にやる場合。</p>
 
-<pre><code>s = "s = \"...\"; print(s.sub(\"...\", s.gsub('\\\\','\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\').gsub('\"', '\\\"')))"; print(s.sub("...", s.gsub('\\','\\\\\\\\\\\\\\\\').gsub('"', '\"')))
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s = "s = \"...\"; print(s.sub(\"...\", s.gsub('\\\\','\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\').gsub('\"', '\\\"')))"; print(s.sub("...", s.gsub('\\','\\\\\\\\\\\\\\\\').gsub('"', '\"')))
+</code></pre></div></div>
 
-<p>次は別解。<code>gsub("A","B")</code>の代わりに<code>gsub("A"){"B"}</code>とすると<code>B</code>の中の<code>\</code>をエスケープしなくてすみます。</p>
+<p>次は別解。<code class="language-plaintext highlighter-rouge">gsub("A","B")</code>の代わりに<code class="language-plaintext highlighter-rouge">gsub("A"){"B"}</code>とすると<code class="language-plaintext highlighter-rouge">B</code>の中の<code class="language-plaintext highlighter-rouge">\</code>をエスケープしなくてすみます。</p>
 
-<pre><code>s = "s = \"...\"; print(s.sub(\"...\"){s.gsub('\\\\'){'\\\\\\\\'}.gsub('\"', '\\\"')})"; print(s.sub("..."){s.gsub('\\'){'\\\\'}.gsub('"', '\"')})
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s = "s = \"...\"; print(s.sub(\"...\"){s.gsub('\\\\'){'\\\\\\\\'}.gsub('\"', '\\\"')})"; print(s.sub("..."){s.gsub('\\'){'\\\\'}.gsub('"', '\"')})
+</code></pre></div></div>
 
-<p>もうひとつ別解。そもそも <code>\</code> という文字を極力使わないでプログラムを書けば、<code>\</code> のエスケープ自体が不要になり、だいぶすっきりします。</p>
+<p>もうひとつ別解。そもそも <code class="language-plaintext highlighter-rouge">\</code> という文字を極力使わないでプログラムを書けば、<code class="language-plaintext highlighter-rouge">\</code> のエスケープ自体が不要になり、だいぶすっきりします。</p>
 
-<pre><code>s = "s = \"...\"; print s.sub(\"...\", s.gsub('\"', 92.chr+'\"'))"; print s.sub("...", s.gsub('"', 92.chr+'"'))
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s = "s = \"...\"; print s.sub(\"...\", s.gsub('\"', 92.chr+'\"'))"; print s.sub("...", s.gsub('"', 92.chr+'"'))
+</code></pre></div></div>
 
 <h2 id="answer-3-2">演習 3-2 の解答</h2>
 
 <p>生成プログラムを示します。</p>
 
-<pre><code>src = &lt;&lt;END
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src = &lt;&lt;END
 #include_&lt;stdio.h&gt;__
 char_s[]=@;
 int_main(){
@@ -193,15 +193,15 @@ src = src.sub("@") { src.gsub("\n", "N").gsub('"', "Q").dump }
 
 # 出来上がったプログラムを出力する
 puts src
-</code></pre>
+</code></pre></div></div>
 
-<p>種となる文字列の中では、<code>N</code> は改行文字を、<code>Q</code> はダブルクォートを表しています。</p>
+<p>種となる文字列の中では、<code class="language-plaintext highlighter-rouge">N</code> は改行文字を、<code class="language-plaintext highlighter-rouge">Q</code> はダブルクォートを表しています。</p>
 
 <h2 id="answer-3-3">演習 3-3 の解答</h2>
 
 <p>配列を使った Quine の生成プログラム。</p>
 
-<pre><code>CODE = &lt;&lt;END
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CODE = &lt;&lt;END
 d = DATA
 d.each do |c|
   if c != 0
@@ -212,11 +212,11 @@ p d
 end
 END
 puts CODE.sub("DATA") { CODE.sub("DATA\n", "\0").bytes.inspect }
-</code></pre>
+</code></pre></div></div>
 
 <p>制御構造を使った Quine の生成プログラム。</p>
 
-<pre><code>CODE_PROLOGUE = &lt;&lt;END
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CODE_PROLOGUE = &lt;&lt;END
 def get(i)
   case i
 END
@@ -244,13 +244,13 @@ DATA_PART = CODE_ALL.bytes.map.with_index do |b, i|
 end
 
 puts CODE_ALL.sub("\0") { DATA_PART.join }
-</code></pre>
+</code></pre></div></div>
 
 <hr />
 
 <p>関数を使わない、分岐とループだけのQuineは次のとおり。</p>
 
-<pre><code>340.times do |i|
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>340.times do |i|
   case (i &lt; 66 ? i : i &lt; 236 ? i - 66 : i - 170)
   when 0 then c = 51
   when 1 then c = 52
@@ -270,54 +270,54 @@ puts CODE_ALL.sub("\0") { DATA_PART.join }
     puts "  when #{ i - 66 } then c = #{ c }"
   end
 end
-</code></pre>
+</code></pre></div></div>
 
 <p>ちょっとわかりにくいですが、次のように動きます。</p>
 
 <ul>
-  <li><code>i</code> が 0 から 65 までの間、ループ 1 回の実行ごとに、1 文字ずつ出力します。
+  <li><code class="language-plaintext highlighter-rouge">i</code> が 0 から 65 までの間、ループ 1 回の実行ごとに、1 文字ずつ出力します。
 これにより、最初の 1 行を出力します。</li>
-  <li><code>i</code> が 66 から 235 までの間、ループ 1 回の実行ごとに、<code>when</code> の行を1行ずつ出力します。</li>
-  <li><code>i</code> が 236 から 339 までの間、また 1 文字ずつ出力します。
+  <li><code class="language-plaintext highlighter-rouge">i</code> が 66 から 235 までの間、ループ 1 回の実行ごとに、<code class="language-plaintext highlighter-rouge">when</code> の行を1行ずつ出力します。</li>
+  <li><code class="language-plaintext highlighter-rouge">i</code> が 236 から 339 までの間、また 1 文字ずつ出力します。
 これにより、最後の 7 行を出力します。</li>
 </ul>
 
 <h2 id="answer-4-1">演習 4-1 の解答</h2>
 
-<pre><code>n=1; eval s="puts \"n=\#{ n+1 }; eval s=\" + s.dump"
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>n=1; eval s="puts \"n=\#{ n+1 }; eval s=\" + s.dump"
+</code></pre></div></div>
 
-<p><code>#{</code> の前にエスケープを入れていることに注意してください。
+<p><code class="language-plaintext highlighter-rouge">#{</code> の前にエスケープを入れていることに注意してください。
 このように、種となる文字列自体では式展開を抑制し、
-<code>eval</code>して初めて式展開が行われるようにタイミングを制御するのがポイントです。
-本文の例では、外側が<code>%q(</code>…<code>)</code>なので式展開が行われず、
-内側の<code>%(</code>…<code>)</code>で初めて式展開が行われるので、
+<code class="language-plaintext highlighter-rouge">eval</code>して初めて式展開が行われるようにタイミングを制御するのがポイントです。
+本文の例では、外側が<code class="language-plaintext highlighter-rouge">%q(</code>…<code class="language-plaintext highlighter-rouge">)</code>なので式展開が行われず、
+内側の<code class="language-plaintext highlighter-rouge">%(</code>…<code class="language-plaintext highlighter-rouge">)</code>で初めて式展開が行われるので、
 たまたまうまいタイミングで展開されていました。
 しかし、たまにこのタイミングを意識しないといけないことがあります。</p>
 
 <h2 id="answer-4-2">演習 4-2 の解答</h2>
 
-<pre><code>eval s=%q(n=1; puts %(eval s=%q(#{ s.sub(/\d+/) { (n+1).to_s } })))
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval s=%q(n=1; puts %(eval s=%q(#{ s.sub(/\d+/) { (n+1).to_s } })))
+</code></pre></div></div>
 
-<p><code>n=1</code> が文字列 <code>s</code> の中に含まれているので、その数字部分を探し出して書き換えるのがポイントです。</p>
+<p><code class="language-plaintext highlighter-rouge">n=1</code> が文字列 <code class="language-plaintext highlighter-rouge">s</code> の中に含まれているので、その数字部分を探し出して書き換えるのがポイントです。</p>
 
 <h2 id="answer-4-3">演習 4-3 の解答</h2>
 <p>(1)</p>
 
-<pre><code>eval s=%q(puts %(print q(print("eval s=%q(#{ s.gsub(34.chr, 92.chr&lt;&lt;34) })"));))
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval s=%q(puts %(print q(print("eval s=%q(#{ s.gsub(34.chr, 92.chr&lt;&lt;34) })"));))
+</code></pre></div></div>
 
 <p>(2)</p>
 
-<pre><code>eval s=%q(%(eval s=%q(#{ s })).each_byte {|c| puts '+'*c+'.&gt;' })
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval s=%q(%(eval s=%q(#{ s })).each_byte {|c| puts '+'*c+'.&gt;' })
+</code></pre></div></div>
 
 <h2 id="answer-5-1">演習 5-1 の解答</h2>
 
 <p>生成プログラムだけ示します。</p>
 
-<pre><code>N = 8
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>N = 8
 
 eval s=%q(puts "require_relative '_-2'"
 line = ""
@@ -332,7 +332,7 @@ line &lt;&lt; "_" * d + " "
   end
 end
 puts line.strip)
-</code></pre>
+</code></pre></div></div>
 
 <p>アンダースコアだけの Hello, world! の生成プログラム（図 5-9）と比較してみてください。</p>
 
@@ -340,35 +340,34 @@ puts line.strip)
 
 <p>まず、変換前プログラムの最後にコメント記号を入れておきます。</p>
 
-<pre><code>puts 'Hello, world!'#
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>puts 'Hello, world!'#
+</code></pre></div></div>
 
-<p>このプログラムを巨大数化した数字を <script type="math/tex">k</script> とします。
-ここで、<script type="math/tex">N = k \times 256^n + b</script> という数字を考えます。
-<script type="math/tex">n</script> は非負の整数、<script type="math/tex">b</script> は <script type="math/tex">% <![CDATA[
-0 \le b < 256^n %]]></script> の整数です。</p>
+<p>このプログラムを巨大数化した数字を \(k\) とします。
+ここで、\(N = k \times 256^n + b\) という数字を考えます。
+\(n\) は非負の整数、\(b\) は \(0 \le b &lt; 256^n\) の整数です。</p>
 
-<p><script type="math/tex">k</script> はプログラムの各文字を 256 進数の各桁として表しているので、
-<script type="math/tex">256^n</script> をかけると <script type="math/tex">n</script> 桁増え、末尾に空きができます。
-そこに <script type="math/tex">b</script> の値がゴミ文字として入ってきます。
-よって <script type="math/tex">N</script> をデコードすると、次のような文字列になります。</p>
+<p>\(k\) はプログラムの各文字を 256 進数の各桁として表しているので、
+\(256^n\) をかけると \(n\) 桁増え、末尾に空きができます。
+そこに \(b\) の値がゴミ文字として入ってきます。
+よって \(N\) をデコードすると、次のような文字列になります。</p>
 
-<pre><code>puts 'Hello, world!'#n個のゴミ文字
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>puts 'Hello, world!'#n個のゴミ文字
+</code></pre></div></div>
 
-<p>したがって、この <script type="math/tex">N</script> も Hello, world! プログラムを表す整数と言えます。</p>
+<p>したがって、この \(N\) も Hello, world! プログラムを表す整数と言えます。</p>
 
 <p>厳密に言えば、ゴミ文字の中に改行文字が含まれると有効なプログラムにならなくなる可能性があります。
-不安であれば、コメントの代わりにスクリプトの終わりを示す <code>__END__</code> という行を最後に置くことで、
+不安であれば、コメントの代わりにスクリプトの終わりを示す <code class="language-plaintext highlighter-rouge">__END__</code> という行を最後に置くことで、
 確実にゴミ文字をスキップできます。ただし、プログラムは長くなります。</p>
 
-<p>あとは、<script type="math/tex">N</script> が素数になるような <script type="math/tex">n</script> と <script type="math/tex">b</script> を探せば終わりです。</p>
+<p>あとは、\(N\) が素数になるような \(n\) と \(b\) を探せば終わりです。</p>
 
 <p>このような巨大数の素数判定は、Ruby標準添付ライブラリの prime.rb には荷が重いでしょう。
 擬素数（非常に高確率で素数だけど、ひょっとしたら素数じゃないかもしれない数）の判定でよければ、
 OpenSSLを使えばかんたんです。</p>
 
-<pre><code>require "openssl"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require "openssl"
 
 SIGNATURE_1234567890 = "I don't believe in natural science."
 k = (SIGNATURE_1234567890 + "puts 'Hello, world!'#").unpack("H*")[0].hex
@@ -383,7 +382,7 @@ end
   end
   n *= 256
 end
-</code></pre>
+</code></pre></div></div>
 
 <p>確実な素数でないことが気になるようであれば、
 ECPP 法や APRCL 法などの高度な素数判定プログラムを使ってください。
@@ -391,12 +390,12 @@ ECPP 法や APRCL 法などの高度な素数判定プログラムを使って�
 もちろん、これらの判定法を自分で実装してみても面白いでしょう。
 ただし、ランダムな入力に対して OpenSSL の素数判定が誤る確率
 （素数じゃないのに素数と判定してしまう確率）は
-<script type="math/tex">1/2^{80}</script> 以下だそうなので、取り越し苦労かもしれません。</p>
+\(1/2^{80}\) 以下だそうなので、取り越し苦労かもしれません。</p>
 
 <blockquote>
-  <p>Both <code>BN_is_prime_ex()</code> and <code>BN_is_prime_fasttest_ex()</code> perform
+  <p>Both <code class="language-plaintext highlighter-rouge">BN_is_prime_ex()</code> and <code class="language-plaintext highlighter-rouge">BN_is_prime_fasttest_ex()</code> perform
 a Miller-Rabin probabilistic primality test with nchecks iterations.
-If <code>nchecks == BN_prime_checks</code>, a number of iterations is used
+If <code class="language-plaintext highlighter-rouge">nchecks == BN_prime_checks</code>, a number of iterations is used
 that yields a false positive rate of at most 2^-80 for random input.</p>
 
   <p>“<a href="https://www.openssl.org/docs/crypto/BN_generate_prime.html">BN_generate_prime - OpenSSL</a>”</p>
@@ -406,14 +405,14 @@ that yields a false positive rate of at most 2^-80 for random input.</p>
 
 <h2 id="answer-6-1">演習 6-1 の解答</h2>
 
-<p>筆者は7種類の文字で書く方法を見つけました（<code>$</code>、<code>&gt;</code>、<code>&lt;</code>、<code>,</code>、<code>'</code>、<code>/</code>、<code>+</code>）。
+<p>筆者は7種類の文字で書く方法を見つけました（<code class="language-plaintext highlighter-rouge">$</code>、<code class="language-plaintext highlighter-rouge">&gt;</code>、<code class="language-plaintext highlighter-rouge">&lt;</code>、<code class="language-plaintext highlighter-rouge">,</code>、<code class="language-plaintext highlighter-rouge">'</code>、<code class="language-plaintext highlighter-rouge">/</code>、<code class="language-plaintext highlighter-rouge">+</code>）。
 生成プログラムだけ載せます。</p>
 
-<pre><code>print "$&gt;.&lt;&lt;''"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print "$&gt;.&lt;&lt;''"
 "Hello, world!\n".bytes.map do |c|
   print "&lt;&lt;" + ["$$/$$"] * c * "+"
 end
-</code></pre>
+</code></pre></div></div>
 
 <p>PID が 0 にならないことを仮定しています。
 さらに少ない文字種で書く方法を見つけたら、ぜひ教えてください。</p>
@@ -425,7 +424,7 @@ end
 <p>全く最適化していないので非常に巨大なプログラムになります。
 「小文字だけ」は 14371 行。でも、動くことは動きます。興味があれば小さくしてみてください。</p>
 
-<pre><code>$ ruby alpha-punct-uroboros-quine.gen.rb &gt; alpha-uroboros-quine.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ruby alpha-punct-uroboros-quine.gen.rb &gt; alpha-uroboros-quine.rb
 
 $ wc -l alpha-uroboros-quine.rb
 14371 alpha-uroboros-quine.rb
@@ -456,13 +455,13 @@ $ diff -s alpha-uroboros-quine.rb alpha-uroboros-quine-2.rb
 ファイル alpha-uroboros-quine.rb と alpha-uroboros-quine-2.rb は同一です
 
 $ &lt;-cursor
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="answer-7-1">演習 7-1 の解答</h2>
 
 <p>あまり面白くないですが、C 言語でのリテラルのみ宇宙線耐性。</p>
 
-<pre><code>#include &lt;stdio.h&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 
 int main(void) {
@@ -474,11 +473,11 @@ int main(void) {
 
     return n - n;
 }
-</code></pre>
+</code></pre></div></div>
 
-<p>2 つの <code>"Hello, world!"</code> のどちらかが壊されても、
-このプログラムは <code>Hello, world!</code> を出力します。
-なお、数値リテラル（このプログラム中では <code>11</code> のみ）が別の値に書き換えられた場合でも、
+<p>2 つの <code class="language-plaintext highlighter-rouge">"Hello, world!"</code> のどちらかが壊されても、
+このプログラムは <code class="language-plaintext highlighter-rouge">Hello, world!</code> を出力します。
+なお、数値リテラル（このプログラム中では <code class="language-plaintext highlighter-rouge">11</code> のみ）が別の値に書き換えられた場合でも、
 ちゃんと正常終了します。</p>
 
 <p>浜地慎一郎さんによる、<a href="http://shinh.hatenablog.com/entries/2014/02/20">Perl での宇宙線耐性 Quine</a> もあります。</p>
@@ -487,62 +486,62 @@ int main(void) {
 
 <p>まず、変換前プログラムで使わない文字を決めます。
 たとえば、大文字アルファベットなんかはなくても困らないでしょう。
-変換前プログラムは <code>Hello, world!</code> の <code>H</code> を使っていますが、`72.chr’ に置き換えます。</p>
+変換前プログラムは <code class="language-plaintext highlighter-rouge">Hello, world!</code> の <code class="language-plaintext highlighter-rouge">H</code> を使っていますが、`72.chr’ に置き換えます。</p>
 
-<pre><code>puts 72.chr+'ello, world!';exit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>puts 72.chr+'ello, world!';exit
 ~    ~~~~~   ~~~   ~  ~~  ~ ~
-</code></pre>
+</code></pre></div></div>
 
 <p>下線が引かれている文字は、文字集合Aに含まれていないため、
 そのままでは表現できない文字です。
 これらの文字を、使わないことにした文字で置換します。
-たとえば、<code>p</code> は <code>P</code> に、<code>7</code> は <code>J</code> に、などと割り当てます。</p>
+たとえば、<code class="language-plaintext highlighter-rouge">p</code> は <code class="language-plaintext highlighter-rouge">P</code> に、<code class="language-plaintext highlighter-rouge">7</code> は <code class="language-plaintext highlighter-rouge">J</code> に、などと割り当てます。</p>
 
-<pre><code>puts 72.chr+'ello, world!';exit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>puts 72.chr+'ello, world!';exit
   ↓
 Puts JEBWMr+'YOOo, RorOX!';Yxit
-</code></pre>
+</code></pre></div></div>
 
 <p>この文字列なら文字集合 A で表現できます。
-これを <code>String#tr</code> で元に戻せば、変換前のプログラムが得られます。</p>
+これを <code class="language-plaintext highlighter-rouge">String#tr</code> で元に戻せば、変換前のプログラムが得られます。</p>
 
-<pre><code>"Puts JEBWMr+'YOOo, RorOX!';Yxit".tr("`^@-Z", "%\"().0-9hklpvw&lt;*a-f")
-</code></pre>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Puts JEBWMr+'YOOo, RorOX!';Yxit".tr("`^@-Z", "%\"().0-9hklpvw&lt;*a-f")
+</code></pre></div></div>
 
-<p>なお、<code>"%\"().0-9hklpvw&lt;*a-f"</code> という文字列は文字集合 A で表現できないので、
-これ自体も <code>String#tr</code> を使って作り出す必要があります。</p>
+<p>なお、<code class="language-plaintext highlighter-rouge">"%\"().0-9hklpvw&lt;*a-f"</code> という文字列は文字集合 A で表現できないので、
+これ自体も <code class="language-plaintext highlighter-rouge">String#tr</code> を使って作り出す必要があります。</p>
 
-<pre><code>proc_tr["qntuz|y","m-|","!-:"] +
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proc_tr["qntuz|y","m-|","!-:"] +
   proc_tr[";jmnrxy&gt;,","&amp;-{","$-{"] +
   proc_tr["n:s",":-{","--{"]  #=&gt; "%\"().0-9hklpvw&lt;*a-f"
-</code></pre>
+</code></pre></div></div>
 
 <p>全体としては <a href="https://github.com/mame/trance-book/blob/master/7-2/lipo-hello2.rb">lipo-hello2.rb</a> を参照してください。</p>
 
-<p>これで、変換前プログラムを表す部分（<code>Puts JEBWMr</code>…）が 1 つの文字列になりました。
+<p>これで、変換前プログラムを表す部分（<code class="language-plaintext highlighter-rouge">Puts JEBWMr</code>…）が 1 つの文字列になりました。
 これによってアスキーアート化もかんたんになります。
 まず生成時に、変換前プログラムを空白なしで書いておき、この範囲はアスキーアート化可とします。
-そして実行時、<code>eval</code> する直前に空白を取り除きます。
+そして実行時、<code class="language-plaintext highlighter-rouge">eval</code> する直前に空白を取り除きます。
 これによって、変換前プログラムを表す部分は自由に成形できることになります。
-なお、文字集合 A に <code>w</code> が含まれていないので、<code>%w(</code>…<code>)*""</code> というイディオムは使用できませんが、
-代わりに <code>"</code>…<code>".tr(" \n", "")</code> とすることで空白を取り除けます。</p>
+なお、文字集合 A に <code class="language-plaintext highlighter-rouge">w</code> が含まれていないので、<code class="language-plaintext highlighter-rouge">%w(</code>…<code class="language-plaintext highlighter-rouge">)*""</code> というイディオムは使用できませんが、
+代わりに <code class="language-plaintext highlighter-rouge">"</code>…<code class="language-plaintext highlighter-rouge">".tr(" \n", "")</code> とすることで空白を取り除けます。</p>
 
-<p>7-2 項のリポグラム Quine では、大文字アルファベット、<code>@</code>、<code>^</code>、<code>‘</code>を
+<p>7-2 項のリポグラム Quine では、大文字アルファベット、<code class="language-plaintext highlighter-rouge">@</code>、<code class="language-plaintext highlighter-rouge">^</code>、<code class="language-plaintext highlighter-rouge">‘</code>を
 変換前プログラムで使わないようにしています。
-そして、<code>.tr("%\"().0-9hklpvw&lt;*a-f", "‘^@A-Z")</code>という対応を使っています。</p>
+そして、<code class="language-plaintext highlighter-rouge">.tr("%\"().0-9hklpvw&lt;*a-f", "‘^@A-Z")</code>という対応を使っています。</p>
 
 <h2 id="answer-7-3">演習 7-3 の解答</h2>
 
 <p>構成自体は解答 7-2 と同じですが、次の 2 点を変えます。</p>
 
 <ul>
-  <li>前半部分を <code>format</code> というローカル変数への代入にする</li>
-  <li>文字集合 B の文字を列挙した文字列を、<code>n</code> というローカル変数に代入する</li>
+  <li>前半部分を <code class="language-plaintext highlighter-rouge">format</code> というローカル変数への代入にする</li>
+  <li>文字集合 B の文字を列挙した文字列を、<code class="language-plaintext highlighter-rouge">n</code> というローカル変数に代入する</li>
 </ul>
 
 <p>これによって、次のようなプログラムになります。</p>
 
-<pre><code>format= %%-&gt;{#({#){#.{#0{#1{#2{#3{#4{#5{#6{#7{#8{#9{#h{#k{#l{#p{#v{#w{#&lt;{#*{#a{#b{#c{#d{#e{#f{#
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>format= %%-&gt;{#({#){#.{#0{#1{#2{#3{#4{#5{#6{#7{#8{#9{#h{#k{#l{#p{#v{#w{#&lt;{#*{#a{#b{#c{#d{#e{#f{#
 
   proc_tr = -&gt; s,x,y { -&gt; &amp;_ { _[s,x,y]}[&amp;:tr] }
 
@@ -554,58 +553,58 @@ Puts JEBWMr+'YOOo, RorOX!';Yxit
 }[]%;
 
 eval"(eval((%w()&lt;&lt;%w( (B) 文字集合 B の文字だけを使う部分 )*%()).pack(%(h*))))"
-</code></pre>
+</code></pre></div></div>
 
 <p>どういう風に動くかを、消される文字ごとに場合分けして考えます。</p>
 
 <ul>
-  <li>I）文字集合 A の文字が消された場合（ただし <code>o</code>、<code>r</code>、<code>m</code>、<code>t</code> 以外）</li>
+  <li>I）文字集合 A の文字が消された場合（ただし <code class="language-plaintext highlighter-rouge">o</code>、<code class="language-plaintext highlighter-rouge">r</code>、<code class="language-plaintext highlighter-rouge">m</code>、<code class="language-plaintext highlighter-rouge">t</code> 以外）</li>
 </ul>
 
-<p>前半部分はローカル変数 <code>format</code> に文字列として代入されます。
+<p>前半部分はローカル変数 <code class="language-plaintext highlighter-rouge">format</code> に文字列として代入されます。
 その後、（B）の部分のプログラムが実行されます。</p>
 
-<p>前半部分が丸ごとローカル変数 <code>format</code> に入っているので、
+<p>前半部分が丸ごとローカル変数 <code class="language-plaintext highlighter-rouge">format</code> に入っているので、
 それと文字集合 A との差分を取れば何が消されたかわかります。</p>
 
 <ul>
-  <li>II）文字集合 B の文字が消された場合（ただし <code>f</code>、<code>a</code> 以外）</li>
+  <li>II）文字集合 B の文字が消された場合（ただし <code class="language-plaintext highlighter-rouge">f</code>、<code class="language-plaintext highlighter-rouge">a</code> 以外）</li>
 </ul>
 
-<p>ローカル変数 <code>format</code> は宣言されますが、代入が行われる前に（A）の部分が実行されます。
-（<code>format</code> には <code>nil</code> が入っています）</p>
+<p>ローカル変数 <code class="language-plaintext highlighter-rouge">format</code> は宣言されますが、代入が行われる前に（A）の部分が実行されます。
+（<code class="language-plaintext highlighter-rouge">format</code> には <code class="language-plaintext highlighter-rouge">nil</code> が入っています）</p>
 
-<p>ローカル変数 <code>n</code> の文字列のどれかが消えているはずなので、
-文字集合 B と <code>n</code> の差分を取れば、何が消されたかわかります。</p>
+<p>ローカル変数 <code class="language-plaintext highlighter-rouge">n</code> の文字列のどれかが消えているはずなので、
+文字集合 B と <code class="language-plaintext highlighter-rouge">n</code> の差分を取れば、何が消されたかわかります。</p>
 
 <ul>
-  <li>III）<code>f</code>、<code>o</code>、<code>r</code>、<code>m</code>、<code>a</code>、<code>t</code> のいずれかが消された場合</li>
+  <li>III）<code class="language-plaintext highlighter-rouge">f</code>、<code class="language-plaintext highlighter-rouge">o</code>、<code class="language-plaintext highlighter-rouge">r</code>、<code class="language-plaintext highlighter-rouge">m</code>、<code class="language-plaintext highlighter-rouge">a</code>、<code class="language-plaintext highlighter-rouge">t</code> のいずれかが消された場合</li>
 </ul>
 
 <p>（A）または（B）のいずれかが実行されます。
-定義されているローカル変数一覧を返す <code>Kernel#local_variables</code> を使って、
-たとえば <code>ormat</code> という変数が定義されているとわかれば、消されたのは <code>f</code> だと判断できます。</p>
+定義されているローカル変数一覧を返す <code class="language-plaintext highlighter-rouge">Kernel#local_variables</code> を使って、
+たとえば <code class="language-plaintext highlighter-rouge">ormat</code> という変数が定義されているとわかれば、消されたのは <code class="language-plaintext highlighter-rouge">f</code> だと判断できます。</p>
 
 <ul>
-  <li>IV）<code>%</code> が消された場合</li>
+  <li>IV）<code class="language-plaintext highlighter-rouge">%</code> が消された場合</li>
 </ul>
 
 <p>文字列の式展開ではなく、ラムダ式として（A）の部分が実行されます（IIの場合と同じ）。
-このとき、<code>n</code> の中の文字が 1 つも消えていなければ、<code>%</code> が消されたのだとわかります。</p>
+このとき、<code class="language-plaintext highlighter-rouge">n</code> の中の文字が 1 つも消えていなければ、<code class="language-plaintext highlighter-rouge">%</code> が消されたのだとわかります。</p>
 
 <ul>
-  <li>V）<code>=</code> が消された場合</li>
+  <li>V）<code class="language-plaintext highlighter-rouge">=</code> が消された場合</li>
 </ul>
 
-<p><code>=</code> が消えると、<code>format</code> への代入は <code>Kernel#format</code> の呼び出しに変わります。
-<code>Kernel#format</code> は文字列を入力して文字列を返すメソッドですが、
+<p><code class="language-plaintext highlighter-rouge">=</code> が消えると、<code class="language-plaintext highlighter-rouge">format</code> への代入は <code class="language-plaintext highlighter-rouge">Kernel#format</code> の呼び出しに変わります。
+<code class="language-plaintext highlighter-rouge">Kernel#format</code> は文字列を入力して文字列を返すメソッドですが、
 結果を使っていないので実質的に意味はありません。
-<code>format</code> も <code>ormat</code> も定義されないまま、（B）の部分が実行されます。
-よって、<code>format</code> や <code>ormat</code> などが一切定義されていないときは、<code>=</code> が消されたのだとわかります。</p>
+<code class="language-plaintext highlighter-rouge">format</code> も <code class="language-plaintext highlighter-rouge">ormat</code> も定義されないまま、（B）の部分が実行されます。
+よって、<code class="language-plaintext highlighter-rouge">format</code> や <code class="language-plaintext highlighter-rouge">ormat</code> などが一切定義されていないときは、<code class="language-plaintext highlighter-rouge">=</code> が消されたのだとわかります。</p>
 
 <p>以上をまとめると、変換前プログラムは次のようになります。</p>
 
-<pre><code>if local_variables.include?(:format)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if local_variables.include?(:format)
   if format
     # I)
     deleted_letters = [10.chr, *32.chr..126.chr] - (format + ?%).chars
@@ -636,7 +635,7 @@ end
 p(deleted_letters.first) unless deleted_letters.empty?
 
 exit#/g
-</code></pre>
+</code></pre></div></div>
 
 <p>最終的なプログラムは <a href="https://github.com/mame/trance-book/blob/master/7-2/lipo-detect.rb">lipo-detect.rb</a> のようになります。</p>
 
